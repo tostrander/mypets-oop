@@ -1,5 +1,27 @@
 <?php
 
+/*
+ * 	1. Create GitHub repo mypets-oop w/ README
+	2. Clone repo and sync to local
+	3. Add:
+		a. .htaccess
+		b. views/my-pets.html
+		c. index.php
+	4. add-commit-push
+	5. Install composer
+	6. Test
+
+	7. Add classes/pet.php
+	8. Include class in route
+	9. Instantiate object
+	10. Display object in template
+
+	11. edit composer.json
+	12. run composer update
+	13. remove include
+    14. test
+ */
+
 //Turn on error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
@@ -25,7 +47,7 @@ $f3->route('GET /',
     $f3->set('pet', $mypet);
 
     $template = new Template();
-    echo $template->render('views/home.html');
+    echo $template->render('views/my-pets.html');
    });
 
 //Run fat-free
