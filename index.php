@@ -15,12 +15,18 @@ $f3->set('DEBUG', 3);
 
 //Define a default route
 $f3->route('GET /',
-   function() {
-    Template template = new Template();
-    template->render("views/home.html");
+   function($f3) {
+
+    //Instantiate a Pet
+    $mypet = new Pet();
+    $mypet->setName('Fido');
+    $mypet->setColor('purple');
+
+    $f3->set('pet', $mypet);
+
+    $template = new Template();
+    echo $template->render('views/home.html');
    });
-
-
 
 //Run fat-free
 $f3->run();
